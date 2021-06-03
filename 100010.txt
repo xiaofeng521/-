@@ -1,4 +1,10 @@
-hostname = act.10010.com, m.client.10010.com
+hostname = act.10010.com, m.client.10010.com,wx.10086.cn
+
+
+
 ^https?:\/\/act.10010.com\/SigninApp\/signin\/querySigninActivity.htm url script-request-header 10010.cookie.js
 ^https?:\/\/act.10010.com\/SigninApp(.*?)\/signin\/daySign url script-request-header 10010.cookie.js
 ^https?:\/\/m.client.10010.com\/dailylottery\/static\/(textdl\/userLogin|active\/findActivityInfo) url script-request-header 10010.cookie.js
+# 注意获取Cookie有两条脚本
+^http:\/\/wx.10086.cn\/website\/taskCenter\/index\? url script-request-header 10086.cookie.js
+^http:\/\/wx.10086.cn\/website\/taskCenter\/sign\? url script-request-header 10086.cookie.js
